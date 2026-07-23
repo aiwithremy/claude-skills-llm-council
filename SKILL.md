@@ -463,5 +463,3 @@ Only save a transcript if the user asks for it or if the question is significant
 - **The chairman can disagree with the majority.** If 4 out of 5 advisors say "do it" but the reasoning of the 1 dissenter is strongest, the chairman should side with the dissenter and explain why.
 
 - **Don't council trivial questions.** If the user asks something with one right answer, just answer it. The council is for genuine uncertainty where multiple perspectives add value.
-
-- **The visual report matters.** Most users will scan the report, not read the full transcript. Make the HTML output clean and scannable.
