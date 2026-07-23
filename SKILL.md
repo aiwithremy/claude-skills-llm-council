@@ -23,6 +23,26 @@ This is adapted from Andrej Karpathy's LLM Council. He dispatches queries to mul
 ---
 
 
+## execution mode — check this first
+
+Before doing anything else, determine which environment you're in. This changes only HOW the council runs, not WHAT it produces.
+
+**Check:** Can you spawn parallel sub-agents (is a Task / sub-agent tool available to you)?
+
+**YES → Full mode.** You're in Claude Code or Claude Cowork. Run Steps 1–6 below exactly as written: the workspace context scan, real parallel advisors, and genuinely blind peer review across separate agent contexts. This is the intended experience.
+
+**NO → Chat mode.** You're in the plain chat: no sub-agents, and usually no file system. Do NOT attempt to spawn agents or read/write workspace files — those actions will silently fail. Instead run this condensed single-response procedure, then stop. It reuses the question framing (Step 1B), the advisor definitions, and the chairman structure (Steps 4–5) — it just runs them inline instead of via sub-agents. Skip the workspace scan (Step 1A) and the sub-agent mechanics of Steps 2 and 3.
+
+1. **Frame** the question from the conversation and any attached or pasted context (Step 1B). Ask at most one clarifying question if it is too vague, then proceed.
+2. **Five advisors, one response.** Write all five advisors yourself, back to back, each committed fully to its lens — no hedging, no balancing, no cross-referencing between them. Aim for ~120–200 words each; trim if the whole reply runs long. Order: Contrarian → First Principles Thinker → Expansionist → Outsider → Executor.
+3. **Peer review (simulated-blind).** Relabel the five answers A–E in a deliberately shuffled order, reveal the mapping, then answer the three review questions from Step 3, putting the most weight on question 3 ("what did all five miss?"). Note honestly that this review is one context reasoning about its own output, not five independent agents.
+4. **Chairman's verdict** using the exact structure from Steps 4–5 (Council Verdict → Where the Council Agrees / Where the Council Clashes / Blind Spots the Council Caught / The Recommendation / The One Thing to Do First). Be direct, don't hedge. Present it in chat; do not write files.
+
+Everything below is the Full-mode specification.
+
+---
+
+
 ## when to run the council
 
 
