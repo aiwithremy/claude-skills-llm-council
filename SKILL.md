@@ -464,4 +464,4 @@ Only save a transcript if the user asks for it or if the question is significant
 
 - **Don't council trivial questions.** If the user asks something with one right answer, just answer it. The council is for genuine uncertainty where multiple perspectives add value.
 
-- **The visual report matters.** Most users will scan the report, not read the full transcript. Make the HTML output clean and scannable.
+- **The verdict format matters.** Most users will scan the verdict, not read the full transcript. Keep the chat output clean and scannable using the structure in step 5 — don't generate an HTML report or any files.
